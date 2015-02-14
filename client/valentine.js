@@ -1,6 +1,7 @@
-$(function() {
+Valentine = function(step) {
   if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
+  step = step || function() {};
   var renderer, scene, camera;
 
   var particleSystem, uniforms, geometry;
@@ -38,8 +39,8 @@ $(function() {
 
       uniforms:       uniforms,
       attributes:     attributes,
-      vertexShader:   (document.getElementById( 'vertexshader' ) || {}).textContent,
-      fragmentShader: (document.getElementById( 'fragmentshader' ) || {}).textContent,
+      vertexShader:   document.getElementById( 'vertexshader' ).textContent,
+      fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
 
       blending:       THREE.AdditiveBlending,
       depthTest:      false,
@@ -128,5 +129,6 @@ $(function() {
 
     renderer.render( scene, camera );
 
+    step(time);
   }
-});
+}
