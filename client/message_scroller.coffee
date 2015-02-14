@@ -51,7 +51,7 @@
     character = line[@currentPosition]
     $character = $('<span class="character"></span>').text(character).hide()
 
-    $character.show 'puff', duration: 1000
+    $character.show 'shake', duration: 1000
     @$el.append $character
 
 
