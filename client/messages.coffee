@@ -7,4 +7,5 @@ Template.messages.rendered = ->
     'All lined out']
   $messages = $('#messages')
   scroller = new MessageScroller($messages, messages)
-  Valentine scroller.step
+  Valentine (dt) ->
+    scroller.step dt
