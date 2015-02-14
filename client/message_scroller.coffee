@@ -45,5 +45,9 @@
   render: ->
     line = @messages[@currentLine]
     character = line[@currentPosition]
-    $character = $('<span class="character"></span>').text(character)
+    $character = $('<span class="character"></span>').text(character).hide()
+
     @$el.append $character
+
+    $character.fadeIn()
+
