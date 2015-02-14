@@ -38,8 +38,8 @@ $(function() {
 
       uniforms:       uniforms,
       attributes:     attributes,
-      vertexShader:   document.getElementById( 'vertexshader' ).textContent,
-      fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
+      vertexShader:   (document.getElementById( 'vertexshader' ) || {}).textContent,
+      fragmentShader: (document.getElementById( 'fragmentshader' ) || {}).textContent,
 
       blending:       THREE.AdditiveBlending,
       depthTest:      false,
