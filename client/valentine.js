@@ -7,6 +7,7 @@ Valentine = function(step) {
   var particleSystem, uniforms, geometry;
 
   var particles = 10000;
+  var lastFrameTime = Date.now();
 
   var WIDTH = window.innerWidth;
   var HEIGHT = window.innerHeight;
@@ -113,7 +114,8 @@ Valentine = function(step) {
 
   function render() {
 
-    var time = Date.now() * 0.005;
+    var now = Date.now();
+    var time = now * 0.005;
 
     particleSystem.rotation.z = 0.01 * time;
 
@@ -129,6 +131,8 @@ Valentine = function(step) {
 
     renderer.render( scene, camera );
 
-    step(time);
+    var dt = (now - lastFrameTime) / 1000;
+    step(dt);
+    lastFrameTime = now;
   }
 }
