@@ -5,7 +5,13 @@ Template.messages.rendered = ->
     'But also, this is a line..',
     'Yet one line further hurts no one',
     'All lined out']
+
   $messages = $('#messages')
+
+  $messages.addClass 'fade-in'
+
   scroller = new MessageScroller($messages, messages)
-  Valentine (dt) ->
-    scroller.step dt
+
+  Valentine (elapsedTime, dt) ->
+    scroller.step elapsedTime, dt
+

@@ -3,17 +3,19 @@
     @$el = $el
     @messages = messages
     @currentLine = 0
-    @currentPosition = 0
-    @secondsPerLetter = 0.1
-    @endOfLinePause = 1.0
+    @currentPosition = -1
+    @secondsPerLetter = 0.2
+    @endOfLinePause = 2.0
     @timeOnCurrentLetter = 0
 
-    @render()
+    @initialDelay = 6.0
 
-  step: (dt) ->
+  step: (elapsedTime, dt) ->
     return if @endOfMessages()
 
     @timeOnCurrentLetter += dt
+
+    return if elapsedTime < @initialDelay
 
     if @timeOnCurrentLetter > @secondsPerLetter
       @timeOnCurrentLetter = 0

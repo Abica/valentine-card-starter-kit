@@ -8,6 +8,7 @@ Valentine = function(step) {
 
   var particles = 10000;
   var lastFrameTime = Date.now();
+  var elapsedTime = 0;
 
   var WIDTH = window.innerWidth;
   var HEIGHT = window.innerHeight;
@@ -132,7 +133,8 @@ Valentine = function(step) {
     renderer.render( scene, camera );
 
     var dt = (now - lastFrameTime) / 1000;
-    step(dt);
+    elapsedTime += dt;
+    step(elapsedTime, dt);
     lastFrameTime = now;
   }
 }

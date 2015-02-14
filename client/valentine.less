@@ -29,9 +29,21 @@ body {
   box-shadow: 0 0px 100px 100px rgba(255, 0, 0, 0.9);
   border-radius: 10px;
 
+  opacity: 0;
+  -webkit-transition: opacity 4s ease-in;
+  -moz-transition: opacity 4s ease-in;
+  -ms-transition: opacity 4s ease-in;
+  -o-transition: opacity 4s ease-in;
+  transition: opacity 4s ease-in;
+
   .character {
     margin-left: 2px;
   }
+
+  &.fade-in {
+    opacity: 1;
+  }
+
 }
 
 #video {
