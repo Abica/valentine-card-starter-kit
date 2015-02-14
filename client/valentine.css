@@ -1,0 +1,27 @@
+body {
+  color: #ffffff;
+  background-color: #000000;
+  margin: 0px;
+  overflow: hidden;
+
+  position: relative;
+}
+
+#messages {
+  font-family: 'Great Vibes', cursive;
+  position: absolute;
+  border: 10px solid #ff0000;
+  box-sizing: border-box;
+  box-shadow: 0 0px 10px 10px #ff0000;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+  width: 500px;
+  height: 100px;
+  padding: 20px;
+
+  color: #ffffff;
+  background: #000000;
+}
