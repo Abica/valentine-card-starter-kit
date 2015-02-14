@@ -4,11 +4,11 @@ Template.messages.rendered = ->
    "Can't take my eyes off of you ",
    "You'd be like heaven to touch ",
    "I wanna hold you so much ",
-   "At long last love has arrived ",
-   "And I thank God I'm alive  ",
+   "At long last love has arrived    ",
+   "And I thank God I'm alive       ",
    "You're just too good to be true ",
    "Can't take my eyes off of you ",
-   " ",
+   "                              ",
 
    "Pardon the way that I stare ",
    "There's nothing else to compare ",
@@ -18,7 +18,8 @@ Template.messages.rendered = ->
    "Please let me know that it's real ",
    "You're just too good to be true ",
    "Can't take my eyes off of you ",
-   " ",
+   "                                               ",
+   "                                               ",
 
    "I love you baby and if it's quite all right ",
    "I need you baby to warm the lonely nights ",
@@ -26,7 +27,7 @@ Template.messages.rendered = ->
    "Oh pretty baby, don't bring me down I pray ",
    "Oh pretty baby, now that I've found you stay ",
    "And let me love you baby, let me love you ",
-   " ",
+   "         ",
 
    "You're just too good to be true ",
    "Can't take my eyes off of you ",
@@ -52,6 +53,17 @@ Template.messages.rendered = ->
 
   scroller = new MessageScroller($messages, messages)
 
+  shown = false
+  cleared = false
   Valentine (elapsedTime, dt) ->
+    if elapsedTime > 5.0 && !shown
+      $node = $('<span class="character"></span>').text('Happy Valentines Day baby :)')
+      $messages.html($node)
+      shown = true
+
+    if elapsedTime > 10.0 && !cleared
+      $messages.html(null)
+      cleared = true
+
     scroller.step elapsedTime, dt
 
