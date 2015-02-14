@@ -4,11 +4,11 @@
     @messages = messages
     @currentLine = 0
     @currentPosition = -1
-    @secondsPerLetter = 0.2
-    @endOfLinePause = 2.0
+    @secondsPerLetter = 0.1
+    @endOfLinePause = 1.0
     @timeOnCurrentLetter = 0
 
-    @initialDelay = 6.0
+    @initialDelay = 17.0
 
   step: (elapsedTime, dt) ->
     return if @endOfMessages()
@@ -43,6 +43,11 @@
 
   renderLinebreak: ->
     @$el.append $('<br />')
+    if @$el.is(':animated')
+      @$el.stop()
+
+    @$el.animate
+      scrollTop: @$el.prop('scrollHeight')
 
   render: ->
     return if @endOfMessages()
@@ -51,7 +56,7 @@
     character = line[@currentPosition]
     $character = $('<span class="character"></span>').text(character).hide()
 
-    $character.show 'shake', duration: 1000
+    $character.show 'puff', duration: 2000
     @$el.append $character
 
 
