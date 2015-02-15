@@ -48,6 +48,7 @@
 
     @$el.animate
       scrollTop: @$el.prop('scrollHeight')
+    , 1500
 
   render: ->
     return if @endOfMessages()

@@ -3,12 +3,12 @@ Template.messages.rendered = ->
    "You're just too good to be true ",
    "Can't take my eyes off of you ",
    "You'd be like heaven to touch ",
-   "I wanna hold you so much ",
+   "I wanna hold you so much     ",
    "At long last love has arrived    ",
    "And I thank God I'm alive       ",
-   "You're just too good to be true ",
+   "You're just too good to be true    ",
    "Can't take my eyes off of you ",
-   "                              ",
+   "        ",
 
    "Pardon the way that I stare ",
    "There's nothing else to compare ",
@@ -18,8 +18,9 @@ Template.messages.rendered = ->
    "Please let me know that it's real ",
    "You're just too good to be true ",
    "Can't take my eyes off of you ",
-   "                                               ",
-   "                                               ",
+   "                                                 ",
+   "                                                 ",
+   "                                  ",
 
    "I love you baby and if it's quite all right ",
    "I need you baby to warm the lonely nights ",
@@ -38,7 +39,7 @@ Template.messages.rendered = ->
    "You're just too good to be true ",
    "Can't take my eyes off of you ",
    "                                               ",
-   "                                               ",
+   "                                           ",
 
    "I love you baby and if it's quite all right ",
    "I need you baby to warm the lonely nights ",
@@ -61,7 +62,7 @@ Template.messages.rendered = ->
       $messages.html($node)
       shown = true
 
-    if elapsedTime > 10.0 && !cleared
+    if elapsedTime > 11.0 && !cleared
       $messages.html(null)
       cleared = true
 
