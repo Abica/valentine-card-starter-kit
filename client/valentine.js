@@ -6,7 +6,7 @@ Valentine = function(step) {
 
   var particleSystem, uniforms, geometry;
 
-  var particles = 10000;
+  var particles = 7500;
   var lastFrameTime = Date.now();
   var elapsedTime = 0;
 
